@@ -145,6 +145,7 @@
         
         function load_requests() {
             db.collection("people").get().then((querySnapshot) => {
+                 $('#table tbody').html("");
                 querySnapshot.forEach((doc) => {
                     console.log(doc);
                     var data = doc.data();
@@ -156,7 +157,7 @@
                     <td>"+ data.date + "</td>\
                     </tr>";
 
-                    $('#table tbody').html("");
+                   
                     $('#table tbody').append(tr);
                 });
             });
